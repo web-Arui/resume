@@ -1,0 +1,305 @@
+.clearfix::after{
+    content: '';
+    display:block;
+    clear: both;
+}
+body{
+    background: #efefef;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+ul,ol{
+    list-style: none;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: normal;
+}
+hr{
+    height: 0;
+    border: none;
+    border-top: 1px solid #dedede;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+.navBar{
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #b7b7b7;
+    transition: all 0.5s;
+}
+.navBar.navs{
+    background: white;
+    padding: 10px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: #3d4451;
+    z-index: 1;
+}
+.navBar .logo{
+    float: left;
+    padding: 4px 14px;
+}
+.navBar .logo .rs{
+    font-size: 24px;
+    font-family: "Arial Black";
+    margin-right: 4px;
+    color: #e6685a;
+}
+.navBar .logo .card{
+    font-size: 24px;
+    font-family: "Arial Black";
+    color: #9a9da2;
+}
+.navBar>nav{
+    float: right;
+    padding: 4px 0;
+}
+.navBar>nav>ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.navBar>nav>ul>li{
+    float: left;
+    margin: 0 14px;
+    position: relative;
+}
+.navBar>nav>ul>li>a{
+    font-size: 12px;
+    
+    font-weight: bold;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    display: block;
+    padding: 5px 0;
+    position: relative;
+}
+.navBar>nav>ul>li.active>a::after{
+    /* border-bottom: 3px solid #e06567; */
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 3px;
+    background: #e06567;
+    width: 100%;
+    animation: borderBottom 0.3s;
+}
+@keyframes borderBottom{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+.navBar .childs{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: white;
+    color: #3d4451;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, .5);
+}
+.navBar li.active> .childs{
+    display: block;
+    animation: childsAn 0.3s;
+}
+@keyframes childsAn {
+    0%{
+        margin-right: 100%;
+        opacity: 0;
+    }
+    100%{
+        margin-right: 0;
+        opacity: 1;
+    }
+}
+.navBar .childs li{
+    white-space: nowrap;
+    padding: 5px 10px;
+}
+main{
+    margin-top: -350px;
+}
+.banner{
+    height: 515px;
+    background-image: url(../image/2.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.banner .mask{
+    height: 515px;
+    background-color: rgba(0, 0, 0, .7)
+}
+.userCard{
+    max-width: 940px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 5px 0 rgba(0, 0, 0, .5)
+}
+.userCard .photo{
+    float: left;
+}
+.userCard .photo img{
+    width: 300px;
+    height: 350px;
+}
+.userCard .text{
+    float: left;
+    margin-left: 65px;
+    width: 470px;
+}
+.userCard .nesting{
+    padding: 50px;
+}
+.userCard .text .welcome{
+    display: inline-block;
+    background: #e6686a;
+    color: white;
+    padding: 4px 16px;
+    position: relative;
+    margin-bottom: 36px;
+}
+.userCard .text h1{
+    margin-bottom: 16px;
+}
+.userCard .text hr{
+    margin: 16px 0;
+}
+.userCard .text .welcome .triangle{
+    position: absolute;
+    display: block;
+    border: 10px solid transparent;
+    border-left-color: #e6686a;
+    border-top-width: 0px;
+    width: 0;
+    top: 100%;
+    left: 4px;
+}
+.userCard dl dt,
+.userCard dl dd{
+    float: left;
+    padding: 5px 0;
+}
+.userCard dl dt{
+    width: 30%;
+    font-weight: bold;
+}
+.userCard dl dd{
+    width: 70%;
+    color: #9da0a7;
+}
+.userCard footer{
+    background: #e6686a;
+    padding: 10px 0;
+    text-align: center;
+}
+.userCard .meail img{
+    width: 20px;
+    height: 20px;
+    padding: 8px;
+    margin: 0 5px;
+}
+.userCard .meail img:hover{
+    padding: 8px;
+    border-radius: 50%;
+    background: #cf5d5f;
+}
+main .pdf{
+    text-align: center;
+}
+main .button{
+    display: inline-block;
+    padding: 15px 25px;
+    border: 1px solid #cdcfde;
+    background: #efefef;
+    color: #3d4451;
+    font-weight: bold;
+    border-radius: 3px;
+    margin: 32px 0;
+    transition: box-shadow 0.5s;
+}
+main .button:hover{
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, .2)
+}
+main .mySelf{
+    max-width: 940px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: "kai";
+    line-height: 1.8;
+    
+}
+.skills,
+.portfolio{
+    max-width: 940px;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+.skills>h2,
+.portfolio>h2{
+    text-align: center;
+    color: #3d4451;
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+.skills ul{
+    background: white;
+    box-shadow: 0px 1px 5px 0 rgba(0, 0, 0, .5);
+    padding: 42px 50px 10px 50px;
+}
+.skills ul li{
+    float: left;
+    width: 48%;
+}
+.skills ul li:nth-child(even){
+    float: right;
+}
+.skills ul .progressBar{
+    height: 5px;
+    background: #fae1e1;
+    margin: 4px 0px 40px 0px;
+}
+.skills ul .progressBar .progress{
+    height: 100%;
+    background: #e6686a;
+    width: 70%;
+}
+.portfolio{
+    text-align: center;
+}
+.portfolio nav {
+    display: inline-block;
+}
+.portfolio nav ol{
+    display: inline-block;
+}
+.portfolio nav ol li{
+    float: left;
+    margin-left: 20px;
+}
+.portfolio nav ol li:first-child{
+    margin-left: 0px;
+}
+.portfolio nav .bar{
+    height: 5px;
+    background: #fae1e1;
+    margin-top: 5px;
+    border-radius: 3px;
+}
+.portfolio nav .bar .barInner{
+    height: 100%;
+    width: 25%;
+    background: #e6686a;
+    border-radius: 3px;
+}
